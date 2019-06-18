@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main" style="width: 1583px;height:298px;background-color: #2B396A;"></div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts-en.min.js"></script>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    var colorList = [
+        '#C1232B', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+        '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+        '#D7504B', '#C6E579', '#F4E001', '#F0805A', '#26C0C0'
+    ];
+    var option = {
+        title: {
+            text: '人员分布',
+            textStyle: {
+                color: '#ffffff'
+            }
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                name: '位置点',
+                nameTextStyle: {
+                    color: '#fff'
+                },
+                data: [{value: '位置点1', textStyle: {color: '#fff'}}, {
+                    value: '位置点2',
+                    textStyle: {color: '#fff'}
+                }, {value: '位置点3', textStyle: {color: '#fff'}}, {
+                    value: '位置点4',
+                    textStyle: {color: '#fff'}
+                }, {value: '位置点5', textStyle: {color: '#fff'}}, {
+                    value: '位置点6',
+                    textStyle: {color: '#fff'}
+                }, {value: '位置点7', textStyle: {color: '#fff'}}
+                    , {value: '位置点8', textStyle: {color: '#fff'}}
+                    , {value: '位置点9', textStyle: {color: '#fff'}}
+                    , {value: '位置点10', textStyle: {color: '#fff'}}
+                    , {value: '位置点11', textStyle: {color: '#fff'}}
+                    , {value: '位置点12', textStyle: {color: '#fff'}}
+                    , {value: '位置点13', textStyle: {color: '#fff'}}
+                    , {value: '位置点14', textStyle: {color: '#fff'}}
+                    , {value: '位置点15', textStyle: {color: '#fff'}}
+                    , {value: '位置点16', textStyle: {color: '#fff'}}
+                    , {value: '位置点17', textStyle: {color: '#fff'}}
+                    , {value: '位置点18', textStyle: {color: '#fff'}}
+                    , {value: '位置点19', textStyle: {color: '#fff'}}
+                    , {value: '位置点20', textStyle: {color: '#fff'}}
+                ],
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                },
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '人数',
+                nameTextStyle: {
+                    color: '#fff'
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+            }
+        ],
+        series: [
+            {
+                name: '人数',
+                type: 'bar',
+                barWidth: '60%',
+                data: [5, 3, 7, 4, 10, 3, 2,1,6,2,9,8,4,12,8,5,11,1,4,7],
+                label: {
+                    show: true,
+                    position: 'top',
+                    color: '#fff',
+                    formatter: function (params) {
+                        return params.data + " 人"
+                    }
+                },
+                itemStyle: {
+
+                    color: function (params) {
+                        return colorList[params.dataIndex]
+                    }
+                }
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>
