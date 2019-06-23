@@ -34,7 +34,8 @@
         },
         yAxis: {
             type : 'value',
-            name:'人数'
+            name:'人数',
+            splitLine: {show:false}
         },
         series: [
             {
@@ -51,12 +52,13 @@
                         color: 'rgba(0,0,0,0)'
                     }
                 },
-                data: [0, 300, 180, 80, 50]
+                data: [0, 100, 0, 380, 420]
             },
             {
                 name: '生活费',
                 type: 'bar',
                 stack: '总量',
+                barWidth : 50,
                 label: {
                     normal: {
                         show: true,
