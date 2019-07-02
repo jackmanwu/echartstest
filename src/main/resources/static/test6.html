@@ -11,14 +11,12 @@
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     option = {
-        backgroundColor: '#ffffff',
+        // backgroundColor: '#2c343c',
 
         title: {
             text: '今日运动',
-            top: 20,
-            textStyle: {
-                color: '#05fcff'
-            }
+            top: 10,
+            fontSize:18
         },
 
         tooltip : {
@@ -51,14 +49,14 @@
                 label: {
                     normal: {
                         textStyle: {
-                            color: 'rgba(255, 255, 255, 0.3)'
+                            color: '#000000'
                         }
                     }
                 },
                 labelLine: {
                     normal   : {
                         lineStyle: {
-                            color    : 'rgba(255, 255, 255, 0.3)'
+                            color    : '#000000'
                         },
                         smooth: 0.2,
                         length: 10,
